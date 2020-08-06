@@ -1,0 +1,551 @@
+#include <iostream>
+#include <stdlib.h> 
+
+using namespace std;
+
+class LaivuMusis
+{
+  private:
+  int n, laivuSkaicius;
+  int vienvietis, dvivietis, trivietis, keturvietis;
+  char lenteleZaidejo[15][15], lenteleKompo[15][15], lentele[15][15];
+  char Pav, koordinateSkaicius;
+  public:
+  LaivuMusis()
+  {
+    n=10;
+    for(int i = 0; i < n; i++){
+    for(int j = 0; j < n; j++){
+     lenteleZaidejo[i][j] = '-';
+     lenteleKompo[i][j] = '-';
+     lentele[i][j] = '-';
+    }
+  }
+  }
+  void AutomatinisLaivuSudejimas()
+  {
+    n=10;
+    for(int i = 0; i < n; i++){
+    for(int j = 0; j < n; j++){
+     lenteleZaidejo[i][j] = '-';
+     lenteleKompo[i][j] = '-';
+     lentele[i][j] = '-';
+    }
+    }
+      vienvietis = 0;
+      dvivietis = 0;
+      trivietis = 0;
+      keturvietis = 6;
+    int pirma, antra;
+      for(int i = 0; i < vienvietis ; i++)
+    {
+      int pirma = 0;
+      pirma = (rand()%10);
+      int antra = 0;
+      antra = (rand()%10);
+      if (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O')
+      lenteleZaidejo[antra][pirma] = 'O';
+      else i--;
+    }
+    while(dvivietis != 0){
+    for(int i = 0; i < dvivietis; i++)
+    {
+      pirma = 0;
+      pirma = (rand()%10);
+      antra = 0;
+      antra = (rand()%10);
+      if (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra][pirma+2] != 'O' && lenteleZaidejo[antra-1][pirma+2] != 'O' && lenteleZaidejo[antra+1][pirma+2] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && pirma != n-1)
+      {
+         lenteleZaidejo[antra][pirma] = 'O';
+         lenteleZaidejo[antra][pirma+1] = 'O';
+         dvivietis--;
+      }
+      else if 
+      (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra-2][pirma] != 'O' && lenteleZaidejo[antra-2][pirma-1] != 'O' && lenteleZaidejo[antra-2][pirma+1] != 'O' && antra != 0)
+      {
+        lenteleZaidejo[antra][pirma] = 'O';
+        lenteleZaidejo[antra-1][pirma] = 'O';
+        dvivietis--;
+      }
+      else if 
+      (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra+2][pirma] != 'O' && lenteleZaidejo[antra+2][pirma-1] != 'O' && lenteleZaidejo[antra+2][pirma+1] != 'O' && antra != n-1)
+      {
+        lenteleZaidejo[antra][pirma] = 'O';
+        lenteleZaidejo[antra+1][pirma] = 'O';
+        dvivietis--;
+      }
+      else if 
+      (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra][pirma-2] != 'O' && lenteleZaidejo[antra-1][pirma-2] != 'O' && lenteleZaidejo[antra+1][pirma-2] != 'O' && pirma != 0)
+      {
+        lenteleZaidejo[antra][pirma] = 'O';
+        lenteleZaidejo[antra][pirma-1] = 'O';
+        dvivietis--;
+      }
+    }
+      while (trivietis != 0)
+      {
+      for(int i = 0; i < trivietis; i++)
+      {
+      pirma = 0;
+      pirma = (rand()%10);
+      antra = 0;
+      antra = (rand()%10);
+      if (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma+2] != 'O' && lenteleZaidejo[antra-1][pirma+3] != 'O' && lenteleZaidejo[antra][pirma+2] != 'O' && lenteleZaidejo[antra][pirma+3] != 'O' && lenteleZaidejo[antra+1][pirma+2] != 'O' && lenteleZaidejo[antra+1][pirma+3] != 'O' && pirma != n-2 && pirma != n-1)
+      {
+        lenteleZaidejo[antra][pirma] = 'O';
+        lenteleZaidejo[antra][pirma+1] = 'O';
+        lenteleZaidejo[antra][pirma+2] = 'O';
+        trivietis--;
+      }
+      else if (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma-2] != 'O' && lenteleZaidejo[antra-1][pirma-3] != 'O' && lenteleZaidejo[antra][pirma-2] != 'O' && lenteleZaidejo[antra][pirma-3] != 'O' && lenteleZaidejo[antra+1][pirma-2] != 'O' && lenteleZaidejo[antra+1][pirma-3] != 'O' && pirma != 0 && pirma != 1)
+      {
+        lenteleZaidejo[antra][pirma] = 'O';
+        lenteleZaidejo[antra][pirma-1] = 'O';
+        lenteleZaidejo[antra][pirma-2] = 'O';
+        trivietis--;
+      }
+      else if (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra+2][pirma] != 'O' && lenteleZaidejo[antra+3][pirma] != 'O' && lenteleZaidejo[antra+2][pirma-1] != 'O' && lenteleZaidejo[antra+3][pirma-1] != 'O' && lenteleZaidejo[antra+2][pirma+1] != 'O' && lenteleZaidejo[antra+3][pirma+1] != 'O' && antra != n-2 && antra != n-1)
+      {
+        lenteleZaidejo[antra][pirma] = 'O';
+        lenteleZaidejo[antra+1][pirma] = 'O';
+        lenteleZaidejo[antra+2][pirma] = 'O';
+        trivietis--;
+      }
+      else if (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra-2][pirma] != 'O' && lenteleZaidejo[antra-3][pirma] != 'O' && lenteleZaidejo[antra-2][pirma+1] != 'O' && lenteleZaidejo[antra-3][pirma+1] != 'O' && lenteleZaidejo[antra-2][pirma-1] != 'O' && lenteleZaidejo[antra-3][pirma-1] != 'O' && antra != 1 && antra != 0)
+      {
+        lenteleZaidejo[antra][pirma] = 'O';
+        lenteleZaidejo[antra-1][pirma] = 'O';
+        lenteleZaidejo[antra-2][pirma] = 'O';
+        trivietis--;
+      }
+      }
+    }
+    while (keturvietis != 0)
+    {
+      for(int i = 0; i < keturvietis; i++)
+      {
+      pirma = 0;
+      pirma = (rand()%10);
+      antra = 0;
+      antra = (rand()%10);
+      if (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma+2] != 'O' && lenteleZaidejo[antra-1][pirma+3] != 'O' && lenteleZaidejo[antra][pirma+2] != 'O' && lenteleZaidejo[antra][pirma+3] != 'O' && lenteleZaidejo[antra+1][pirma+2] != 'O' && lenteleZaidejo[antra+1][pirma+3] != 'O' && lenteleZaidejo[antra][pirma+4] != 'O' && lenteleZaidejo[antra+1][pirma+4] != 'O' && lenteleZaidejo[antra-1][pirma+4] != 'O' && pirma != n-1 && pirma != n-2 && pirma != n-3)
+      {
+        lenteleZaidejo[antra][pirma] = 'O';
+        lenteleZaidejo[antra][pirma+1] = 'O';
+        lenteleZaidejo[antra][pirma+2] = 'O';
+        lenteleZaidejo[antra][pirma+3] = 'O';
+        keturvietis--;
+      }
+      else if (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma-2] != 'O' && lenteleZaidejo[antra-1][pirma-3] != 'O' && lenteleZaidejo[antra][pirma-2] != 'O' && lenteleZaidejo[antra][pirma-3] != 'O' && lenteleZaidejo[antra+1][pirma-2] != 'O' && lenteleZaidejo[antra+1][pirma-3] != 'O' && lenteleZaidejo[antra][pirma-4] != 'O' &&lenteleZaidejo[antra-1][pirma-4] != 'O' && lenteleZaidejo[antra+1][pirma-4] != 'O' && pirma != 0 && pirma != 1 && pirma != 2)
+      {
+        lenteleZaidejo[antra][pirma] = 'O';
+        lenteleZaidejo[antra][pirma-1] = 'O';
+        lenteleZaidejo[antra][pirma-2] = 'O';
+        lenteleZaidejo[antra][pirma-3] = 'O';
+        keturvietis--;
+      }
+      else if (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra-2][pirma] != 'O' && lenteleZaidejo[antra-3][pirma] != 'O' && lenteleZaidejo[antra-2][pirma+1] != 'O' && lenteleZaidejo[antra-3][pirma+1] != 'O' && lenteleZaidejo[antra-2][pirma-1] != 'O' && lenteleZaidejo[antra-3][pirma-1] != 'O' && lenteleZaidejo[antra-4][pirma] != 'O' && lenteleZaidejo[antra-4][pirma+1] != 'O' && lenteleZaidejo[antra-4][pirma-1] != 'O' &&  antra != 1 && antra != 0 && antra != 2)
+      {
+        lenteleZaidejo[antra][pirma] = 'O';
+        lenteleZaidejo[antra-1][pirma] = 'O';
+        lenteleZaidejo[antra-2][pirma] = 'O';
+        lenteleZaidejo[antra-3][pirma] = 'O';
+        keturvietis--;
+      }
+      else if (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra+2][pirma] != 'O' && lenteleZaidejo[antra+3][pirma] != 'O' && lenteleZaidejo[antra+2][pirma-1] != 'O' && lenteleZaidejo[antra+3][pirma-1] != 'O' && lenteleZaidejo[antra+2][pirma+1] != 'O' && lenteleZaidejo[antra+3][pirma+1] != 'O' && lenteleZaidejo[antra+4][pirma] != 'O' && lenteleZaidejo[antra+4][pirma+1] != 'O' && lenteleZaidejo[antra+4][pirma-1] != 'O' && antra != n-2 && antra != n-1 && antra != n-3)
+      {
+        lenteleZaidejo[antra][pirma] = 'O';
+        lenteleZaidejo[antra+1][pirma] = 'O';
+        lenteleZaidejo[antra+2][pirma] = 'O';
+        lenteleZaidejo[antra+3][pirma] = 'O';
+        keturvietis--;
+      }
+      }
+    }
+    }    
+    cout << "  R E S P U B L I K A        R E S P U B L I K A " << endl;
+    cout << "----------------------      ---------------------" << endl;
+    for (int i = 0; i < n; i++)
+    {
+      cout << i << "|";
+      for(int j = 0; j < n; j++)
+      {
+        cout << lenteleZaidejo[i][j] << " ";
+      }
+      cout << "     ";
+      cout << i << "|";
+      for(int k = 0; k < n; k++)
+      {
+        cout << lenteleKompo[i][k] << " ";
+      }
+      cout << endl;
+    }
+  }  
+  void KompiuterioLaivai()
+  {
+     n=10;
+    for(int i = 0; i < n; i++){
+    for(int j = 0; j < n; j++){
+     lentele[i][j] = '-';
+    }
+    }
+    vienvietis = 4;
+    dvivietis = 3;
+    trivietis = 2;
+    keturvietis = 1;
+    int pirma, antra;
+    for(int i = 0; i < vienvietis ; i++)
+    {
+      int pirma = 0;
+      pirma = (rand()%10);
+      int antra = 0;
+      antra = (rand()%10);
+      if (lentele[antra][pirma] == '-' && lentele[antra][pirma-1] != 'O' && lentele[antra][pirma+1] != 'O' && lentele[antra-1][pirma] != 'O' && lentele[antra-1][pirma-1] != 'O' && lentele[antra-1][pirma+1] != 'O' && lentele[antra+1][pirma] != 'O' && lentele[antra+1][pirma-1] != 'O' && lentele[antra+1][pirma+1] != 'O')
+      lentele[antra][pirma] = 'O';
+      else i--;
+    }
+    while(dvivietis != 0){
+    for(int i = 0; i < dvivietis; i++)
+    {
+      pirma = 0;
+      pirma = (rand()%10);
+      antra = 0;
+      antra = (rand()%10);
+      if (lentele[antra][pirma] == '-' && lentele[antra][pirma-1] != 'O' && lentele[antra][pirma+1] != 'O' && lentele[antra-1][pirma] != 'O' && lentele[antra-1][pirma-1] != 'O' && lentele[antra-1][pirma+1] != 'O' && lentele[antra+1][pirma] != 'O' && lentele[antra+1][pirma-1] != 'O' && lentele[antra+1][pirma+1] != 'O' && lentele[antra][pirma+2] != 'O' && lentele[antra-1][pirma+2] != 'O' && lentele[antra+1][pirma+2] != 'O' && lentele[antra+1][pirma+1] != 'O' && pirma != n-1)
+      {
+         lentele[antra][pirma] = 'O';
+         lentele[antra][pirma+1] = 'O';
+         dvivietis--;
+      }
+      else if 
+      (lentele[antra][pirma] == '-' && lentele[antra][pirma-1] != 'O' && lentele[antra][pirma+1] != 'O' && lentele[antra-1][pirma] != 'O' && lentele[antra-1][pirma-1] != 'O' && lentele[antra-1][pirma+1] != 'O' && lentele[antra+1][pirma] != 'O' && lentele[antra+1][pirma-1] != 'O' && lentele[antra+1][pirma+1] != 'O' && lentele[antra-2][pirma] != 'O' && lentele[antra-2][pirma-1] != 'O' && lentele[antra-2][pirma+1] != 'O' && antra != 0)
+      {
+        lentele[antra][pirma] = 'O';
+        lentele[antra-1][pirma] = 'O';
+        dvivietis--;
+      }
+      else if 
+      (lentele[antra][pirma] == '-' && lentele[antra][pirma-1] != 'O' && lentele[antra][pirma+1] != 'O' && lentele[antra-1][pirma] != 'O' && lentele[antra-1][pirma-1] != 'O' && lentele[antra-1][pirma+1] != 'O' && lentele[antra+1][pirma] != 'O' && lentele[antra+1][pirma-1] != 'O' && lentele[antra+1][pirma+1] != 'O' && lentele[antra+2][pirma] != 'O' && lentele[antra+2][pirma-1] != 'O' && lentele[antra+2][pirma+1] != 'O' && antra != n-1)
+      {
+        lentele[antra][pirma] = 'O';
+        lentele[antra+1][pirma] = 'O';
+        dvivietis--;
+      }
+      else if 
+      (lentele[antra][pirma] == '-' && lentele[antra][pirma-1] != 'O' && lentele[antra][pirma+1] != 'O' && lentele[antra-1][pirma] != 'O' && lentele[antra-1][pirma-1] != 'O' && lentele[antra-1][pirma+1] != 'O' && lentele[antra+1][pirma] != 'O' && lentele[antra+1][pirma-1] != 'O' && lentele[antra+1][pirma+1] != 'O' && lentele[antra][pirma-2] != 'O' && lentele[antra-1][pirma-2] != 'O' && lentele[antra+1][pirma-2] != 'O' && pirma != 0)
+      {
+        lentele[antra][pirma] = 'O';
+        lentele[antra][pirma-1] = 'O';
+        dvivietis--;
+      }
+    }
+      while (trivietis != 0)
+      {
+      for(int i = 0; i < trivietis; i++)
+      {
+      pirma = 0;
+      pirma = (rand()%10);
+      antra = 0;
+      antra = (rand()%10);
+      if (lentele[antra][pirma] == '-' && lentele[antra][pirma-1] != 'O' && lentele[antra][pirma+1] != 'O' && lentele[antra-1][pirma] != 'O' && lentele[antra-1][pirma-1] != 'O' && lentele[antra-1][pirma+1] != 'O' && lentele[antra+1][pirma] != 'O' && lentele[antra+1][pirma-1] != 'O' && lentele[antra+1][pirma+1] != 'O' && lentele[antra-1][pirma+2] != 'O' && lentele[antra-1][pirma+3] != 'O' && lentele[antra][pirma+2] != 'O' && lentele[antra][pirma+3] != 'O' && lentele[antra+1][pirma+2] != 'O' && lentele[antra+1][pirma+3] != 'O' && pirma != n-2 && pirma != n-1)
+      {
+        lentele[antra][pirma] = 'O';
+        lentele[antra][pirma+1] = 'O';
+        lentele[antra][pirma+2] = 'O';
+        trivietis--;
+      }
+      else if (lentele[antra][pirma] == '-' && lentele[antra][pirma-1] != 'O' && lentele[antra][pirma+1] != 'O' && lentele[antra-1][pirma] != 'O' && lentele[antra-1][pirma-1] != 'O' && lentele[antra-1][pirma+1] != 'O' && lentele[antra+1][pirma] != 'O' && lentele[antra+1][pirma-1] != 'O' && lentele[antra+1][pirma+1] != 'O' && lentele[antra-1][pirma-2] != 'O' && lentele[antra-1][pirma-3] != 'O' && lentele[antra][pirma-2] != 'O' && lentele[antra][pirma-3] != 'O' && lentele[antra+1][pirma-2] != 'O' && lentele[antra+1][pirma-3] != 'O' && pirma != 0 && pirma != 1)
+      {
+        lentele[antra][pirma] = 'O';
+        lentele[antra][pirma-1] = 'O';
+        lentele[antra][pirma-2] = 'O';
+        trivietis--;
+      }
+      else if (lenteleZaidejo[antra][pirma] == '-' && lenteleZaidejo[antra][pirma-1] != 'O' && lenteleZaidejo[antra][pirma+1] != 'O' && lenteleZaidejo[antra-1][pirma] != 'O' && lenteleZaidejo[antra-1][pirma-1] != 'O' && lenteleZaidejo[antra-1][pirma+1] != 'O' && lenteleZaidejo[antra+1][pirma] != 'O' && lenteleZaidejo[antra+1][pirma-1] != 'O' && lenteleZaidejo[antra+1][pirma+1] != 'O' && lenteleZaidejo[antra+2][pirma] != 'O' && lenteleZaidejo[antra+3][pirma] != 'O' && lenteleZaidejo[antra+2][pirma-1] != 'O' && lenteleZaidejo[antra+3][pirma-1] != 'O' && lenteleZaidejo[antra+2][pirma+1] != 'O' && lenteleZaidejo[antra+3][pirma+1] != 'O' && antra != n-2 && antra != n-1)
+      {
+        lenteleZaidejo[antra][pirma] = 'O';
+        lenteleZaidejo[antra+1][pirma] = 'O';
+        lenteleZaidejo[antra+2][pirma] = 'O';
+        trivietis--;
+      }
+      else if (lentele[antra][pirma] == '-' && lentele[antra][pirma-1] != 'O' && lentele[antra][pirma+1] != 'O' && lentele[antra-1][pirma] != 'O' && lentele[antra-1][pirma-1] != 'O' && lentele[antra-1][pirma+1] != 'O' && lentele[antra+1][pirma] != 'O' && lentele[antra+1][pirma-1] != 'O' && lentele[antra+1][pirma+1] != 'O' && lentele[antra-2][pirma] != 'O' && lentele[antra-3][pirma] != 'O' && lentele[antra-2][pirma+1] != 'O' && lentele[antra-3][pirma+1] != 'O' && lentele[antra-2][pirma-1] != 'O' && lentele[antra-3][pirma-1] != 'O' && antra != 1 && antra != 0)
+      {
+        lentele[antra][pirma] = 'O';
+        lentele[antra-1][pirma] = 'O';
+        lentele[antra-2][pirma] = 'O';
+        trivietis--;
+      }
+      }
+    }
+    while (keturvietis != 0)
+    {
+      for(int i = 0; i < keturvietis; i++)
+      {
+      pirma = 0;
+      pirma = (rand()%10);
+      antra = 0;
+      antra = (rand()%10);
+      if (lentele[antra][pirma] == '-' && lentele[antra][pirma-1] != 'O' && lentele[antra][pirma+1] != 'O' && lentele[antra-1][pirma] != 'O' && lentele[antra-1][pirma-1] != 'O' && lentele[antra-1][pirma+1] != 'O' && lentele[antra+1][pirma] != 'O' && lentele[antra+1][pirma-1] != 'O' && lentele[antra+1][pirma+1] != 'O' && lentele[antra-1][pirma+2] != 'O' && lentele[antra-1][pirma+3] != 'O' && lentele[antra][pirma+2] != 'O' && lentele[antra][pirma+3] != 'O' && lentele[antra+1][pirma+2] != 'O' && lentele[antra+1][pirma+3] != 'O' && lentele[antra][pirma+4] != 'O' && lentele[antra+1][pirma+4] != 'O' && lentele[antra-1][pirma+4] != 'O' && pirma != n-1 && pirma != n-2 && pirma != n-3)
+      {
+        lentele[antra][pirma] = 'O';
+        lentele[antra][pirma+1] = 'O';
+        lentele[antra][pirma+2] = 'O';
+        lentele[antra][pirma+3] = 'O';
+        keturvietis--;
+      }
+      else if (lentele[antra][pirma] == '-' && lentele[antra][pirma-1] != 'O' && lentele[antra][pirma+1] != 'O' && lentele[antra-1][pirma] != 'O' && lentele[antra-1][pirma-1] != 'O' && lentele[antra-1][pirma+1] != 'O' && lentele[antra+1][pirma] != 'O' && lentele[antra+1][pirma-1] != 'O' && lentele[antra+1][pirma+1] != 'O' && lentele[antra-1][pirma-2] != 'O' && lentele[antra-1][pirma-3] != 'O' && lentele[antra][pirma-2] != 'O' && lentele[antra][pirma-3] != 'O' && lentele[antra+1][pirma-2] != 'O' && lentele[antra+1][pirma-3] != 'O' && lentele[antra][pirma-4] != 'O' &&lentele[antra-1][pirma-4] != 'O' && lentele[antra+1][pirma-4] != 'O' && pirma != 0 && pirma != 1 && pirma != 2)
+      {
+        lentele[antra][pirma] = 'O';
+        lentele[antra][pirma-1] = 'O';
+        lentele[antra][pirma-2] = 'O';
+        lentele[antra][pirma-3] = 'O';
+        keturvietis--;
+      }
+      else if (lentele[antra][pirma] == '-' && lentele[antra][pirma-1] != 'O' && lentele[antra][pirma+1] != 'O' && lentele[antra-1][pirma] != 'O' && lentele[antra-1][pirma-1] != 'O' && lentele[antra-1][pirma+1] != 'O' && lentele[antra+1][pirma] != 'O' && lentele[antra+1][pirma-1] != 'O' && lentele[antra+1][pirma+1] != 'O' && lentele[antra-2][pirma] != 'O' && lentele[antra-3][pirma] != 'O' && lentele[antra-2][pirma+1] != 'O' && lentele[antra-3][pirma+1] != 'O' && lentele[antra-2][pirma-1] != 'O' && lentele[antra-3][pirma-1] != 'O' && lentele[antra-4][pirma] != 'O' && lentele[antra-4][pirma+1] != 'O' && lentele[antra-4][pirma-1] != 'O' &&  antra != 1 && antra != 0 && antra != 2)
+      {
+        lentele[antra][pirma] = 'O';
+        lentele[antra-1][pirma] = 'O';
+        lentele[antra-2][pirma] = 'O';
+        lentele[antra-3][pirma] = 'O';
+        keturvietis--;
+      }
+      else if (lentele[antra][pirma] == '-' && lentele[antra][pirma-1] != 'O' && lentele[antra][pirma+1] != 'O' && lentele[antra-1][pirma] != 'O' && lentele[antra-1][pirma-1] != 'O' && lentele[antra-1][pirma+1] != 'O' && lentele[antra+1][pirma] != 'O' && lentele[antra+1][pirma-1] != 'O' && lentele[antra+1][pirma+1] != 'O' && lentele[antra+2][pirma] != 'O' && lentele[antra+3][pirma] != 'O' && lentele[antra+2][pirma-1] != 'O' && lentele[antra+3][pirma-1] != 'O' && lentele[antra+2][pirma+1] != 'O' && lentele[antra+3][pirma+1] != 'O' && lentele[antra+4][pirma] != 'O' && lentele[antra+4][pirma+1] != 'O' && lentele[antra+4][pirma-1] != 'O' && antra != n-2 && antra != n-1 && antra != n-3)
+      {
+        lentele[antra][pirma] = 'O';
+        lentele[antra+1][pirma] = 'O';
+        lentele[antra+2][pirma] = 'O';
+        lentele[antra+3][pirma] = 'O';
+        keturvietis--;
+      }
+      }
+    }    }
+  }
+   int konvertuotiRaides(char raide)
+  {
+    int PriskirtaKoordinate = -1;
+    if (raide == 'R' || raide == 'r')
+    {
+      PriskirtaKoordinate = 0;
+    }
+    if (raide == 'E' ||raide == 'e')
+    {
+      PriskirtaKoordinate = 1;
+    }
+    if (raide == 'S' ||raide == 's')
+    {
+      PriskirtaKoordinate = 2;
+    }
+    if (raide == 'P' ||raide == 'p')
+    {
+      PriskirtaKoordinate = 3;
+    }
+    if (raide == 'U' ||raide == 'u')
+    {
+      PriskirtaKoordinate = 4;
+    }
+    if (raide == 'B' ||raide == 'b')
+    {
+      PriskirtaKoordinate = 5;
+    }
+    if (raide == 'L' ||raide == 'l')
+    {
+      PriskirtaKoordinate = 6;
+    }
+    if (raide == 'I' ||raide == 'i')
+    {
+      PriskirtaKoordinate = 7;
+    }
+    if (raide == 'K' ||raide == 'k')
+    {
+      PriskirtaKoordinate = 8;
+    }
+    if (raide == 'A' ||raide == 'a')
+    {
+      PriskirtaKoordinate = 9;
+    }
+    return PriskirtaKoordinate;
+  } 
+  void saudyti()
+  {
+    laivuSkaicius = 10;
+    n = 10;
+    int x = 1, hit = 1, hitKompo = 0;
+    int manoLaivai = 24, kompoLaivai = 20;
+    string koordinate;
+    int koordinateRaide;
+    int koordinateSkaicius;
+    while (kompoLaivai != 0 || manoLaivai != 0)
+    {
+      int pirma = 0;
+      pirma = (rand()%10);
+      int antra = 0;
+      antra = (rand()%10);
+      if (hit > 0)
+      {
+      cout << "Iveskite koordinate, kur norite sauti:" << endl;
+      cin >> koordinate;
+      koordinateSkaicius = konvertuotiRaides(koordinate[0]);
+      koordinateRaide = atoi(&koordinate[1]);
+      if (lentele[koordinateRaide][koordinateSkaicius] == '-')
+        {
+          lenteleKompo[koordinateRaide][koordinateSkaicius] = 'X';
+          hit = 0;
+          hitKompo = 1;
+          cout<<"\x1B[2J\x1B[H";
+          cout << "  R E S P U B L I K A        R E S P U B L I K A " << endl;
+    cout << "----------------------      ---------------------" << endl;
+    for (int i = 0; i < n; i++)
+    {
+      cout << i << "|";
+      for(int j = 0; j < n; j++)
+      {
+        cout << lenteleZaidejo[i][j] << " ";
+      }
+      cout << "     ";
+      cout << i << "|";
+      for(int k = 0; k < n; k++)
+      {
+        cout << lenteleKompo[i][k] << " ";
+      }
+      cout << endl;
+    }
+         }
+     else if (lentele[koordinateRaide][koordinateSkaicius] == 'O')
+        {
+          lenteleKompo[koordinateRaide][koordinateSkaicius] = 'Y';
+          kompoLaivai--;
+          hit++;
+          hitKompo = 0;  
+          cout<<"\x1B[2J\x1B[H";
+          cout << "  R E S P U B L I K A        R E S P U B L I K A " << endl;
+    cout << "----------------------      ---------------------" << endl;
+    for (int i = 0; i < n; i++)
+    {
+      cout << i << "|";
+      for(int j = 0; j < n; j++)
+      {
+        cout << lenteleZaidejo[i][j] << " ";
+      }
+      cout << "     ";
+      cout << i << "|";
+      for(int k = 0; k < n; k++)
+      {
+        cout << lenteleKompo[i][k] << " ";
+      }
+      cout << endl;
+    } cout << "Pataikete, saukite dar karta" << endl;
+        }
+      } 
+      if (hitKompo > 0)
+      {
+      if (lenteleZaidejo[pirma][antra] == '-')
+      {
+        lenteleZaidejo[pirma][antra] = 'X';
+        hitKompo = 0;
+        hit = 1;
+        cout<<"\x1B[2J\x1B[H";
+        cout << "  R E S P U B L I K A        R E S P U B L I K A " << endl;
+    cout << "----------------------      ---------------------" << endl;
+    for (int i = 0; i < n; i++)
+    {
+      cout << i << "|";
+      for(int j = 0; j < n; j++)
+      {
+        cout << lenteleZaidejo[i][j] << " ";
+      }
+      cout << "     ";
+      cout << i << "|";
+      for(int k = 0; k < n; k++)
+      {
+        cout << lenteleKompo[i][k] << " ";
+      }
+      cout << endl;
+    }
+      }
+       if (lenteleZaidejo[pirma][antra] == 'O' && hitKompo > 0 && lenteleZaidejo[pirma-1][antra] != 'O' && lenteleZaidejo[pirma+1][antra] != 'O' && lenteleZaidejo[pirma][antra-1] != 'O' && lenteleZaidejo[pirma][antra+1] != 'O' && lenteleZaidejo[pirma+1][antra+1] != 'O' && lenteleZaidejo[pirma-1][antra+1] != 'O' && lenteleZaidejo[pirma+1][antra-1] != 'O' && lenteleZaidejo[pirma-1][antra-1] != 'O' && lenteleZaidejo[pirma-1][antra] != 'Y' && lenteleZaidejo[pirma+1][antra] != 'Y' && lenteleZaidejo[pirma][antra-1] != 'Y' && lenteleZaidejo[pirma][antra+1] != 'Y' && lenteleZaidejo[pirma+1][antra+1] != 'Y' && lenteleZaidejo[pirma-1][antra+1] != 'Y' && lenteleZaidejo[pirma+1][antra-1] != 'Y' && lenteleZaidejo[pirma-1][antra-1] != 'Y')
+      {
+        lenteleZaidejo[pirma][antra] = 'Y';
+        lenteleZaidejo[pirma-1][antra] = 'X';
+        lenteleZaidejo[pirma+1][antra] = 'X';
+        lenteleZaidejo[pirma][antra-1] = 'X';
+        lenteleZaidejo[pirma][antra+1] = 'X';
+        lenteleZaidejo[pirma+1][antra+1] = 'X';
+        lenteleZaidejo[pirma-1][antra+1] = 'X';
+        lenteleZaidejo[pirma+1][antra-1] = 'X';
+        lenteleZaidejo[pirma-1][antra-1] = 'X';
+        manoLaivai--;
+        hitKompo++;   
+        hit = 0; 
+        cout<<"\x1B[2J\x1B[H";
+        cout << "  R E S P U B L I K A        R E S P U B L I K A " << endl;
+    cout << "----------------------      ---------------------" << endl;
+    for (int i = 0; i < n; i++)
+    {
+      cout << i << "|";
+      for(int j = 0; j < n; j++)
+      {
+        cout << lenteleZaidejo[i][j] << " ";
+      }
+      cout << "     ";
+      cout << i << "|";
+      for(int k = 0; k < n; k++)
+      {
+        cout << lenteleKompo[i][k] << " ";
+      }
+      cout << endl;
+    }
+       }
+       else if (lenteleZaidejo[pirma][antra] == 'O' && hitKompo > 0  && (lenteleZaidejo[pirma-1][antra] == 'O' || lenteleZaidejo[pirma+1][antra] == 'O' || lenteleZaidejo[pirma][antra-1] == 'O' || lenteleZaidejo[pirma][antra+1] == 'O' || lenteleZaidejo[pirma+1][antra+1] == 'O' || lenteleZaidejo[pirma-1][antra+1] == 'O' || lenteleZaidejo[pirma+1][antra-1] == 'O' || lenteleZaidejo[pirma-1][antra-1] == 'O' || lenteleZaidejo[pirma-1][antra] == 'Y' || lenteleZaidejo[pirma+1][antra] == 'Y' || lenteleZaidejo[pirma][antra-1] == 'Y' || lenteleZaidejo[pirma][antra+1] == 'Y' || lenteleZaidejo[pirma+1][antra+1] == 'Y' || lenteleZaidejo[pirma-1][antra+1] == 'Y' || lenteleZaidejo[pirma+1][antra-1] == 'Y' || lenteleZaidejo[pirma-1][antra-1] == 'Y'))
+      {
+        lenteleZaidejo[pirma][antra] = 'Y';
+        manoLaivai--;
+        hitKompo++;   
+        hit = 0; 
+         cout<<"\x1B[2J\x1B[H";
+        cout << "  R E S P U B L I K A        R E S P U B L I K A " << endl;
+    cout << "----------------------      ---------------------" << endl;
+    for (int i = 0; i < n; i++)
+    {
+      cout << i << "|";
+      for(int j = 0; j < n; j++)
+      {
+        cout << lenteleZaidejo[i][j] << " ";
+      }
+      cout << "     ";
+      cout << i << "|";
+      for(int k = 0; k < n; k++)
+      {
+        cout << lenteleKompo[i][k] << " ";
+      }
+      cout << endl;
+    }
+      }  
+      }
+      if (manoLaivai == 0)
+      {
+        cout << endl;
+        cout << "PRALAIMEJOTE :( :( :(" << endl;
+        break;
+      }  
+      if (kompoLaivai == 0)
+      {
+        cout << endl;
+        cout << "LAIMEJOTE!!!!!!!!!!!!!!!!!!!!!!!" << endl;
+        break;
+      } 
+    }
+  }
+    
+  };
+  int main() {
+    srand(time(NULL));
+  LaivuMusis *Z;
+  for(int i = 0; i < 1; i++)
+  {
+    Z[i].AutomatinisLaivuSudejimas();
+    Z[i].KompiuterioLaivai();
+    Z[i].saudyti();
+    
+  }
+
+}
